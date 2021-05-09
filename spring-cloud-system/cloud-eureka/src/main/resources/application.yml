@@ -1,0 +1,17 @@
+#------------------------------------------------\u670D\u52A1\u5668\u914D\u7F6E---------------------------------------
+#\u670D\u52A1\u7AEF\u53E3
+server:
+  port: 18761
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://localhost:18761/eureka/
+
+  server:
+    wait-time-in-ms-when-sync-empty: 0
+
