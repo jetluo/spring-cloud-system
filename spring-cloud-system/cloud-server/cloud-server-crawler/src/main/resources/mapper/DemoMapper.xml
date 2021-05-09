@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">   
+<mapper namespace="com.cloud.kjetboy.server.crawler.mapper.DemoMapper">
+	<resultMap id="DemoResultMap" type="com.cloud.kjetboy.server.crawler.entity.Demo">
+		<id column="id" property="id"></id>
+		<result column="name" property="name"/>
+	</resultMap>
+	<sql id="demo_column_name">
+		a.id,a.name
+	</sql>
+	
+	<select id="findAll" parameterType="map" resultMap="DemoResultMap">
+		select 
+		  *
+		from demo a	
+	</select>
+	
+    
+	<insert id="insertDemo">
+		insert into demo
+		(
+			id,
+			name
+		)
+		values
+		(
+			REPLACE(UUID(), '-', ''),
+			#{name}
+		)
+	</insert>
+	
+	<update id="updateDemo" parameterType="map">
+		update demo 
+		<set>
+			<if test="name != null and name != ''">
+				name = #{name}
+			</if>
+			
+		</set>
+		<where>
+		  	id = #{id}
+		</where>
+	</update>
+	
+	<delete id="deleteDemo" parameterType="map">
+		delete from demo 
+		<where>
+			id = #{id}
+		</where>
+	</delete>
+	
+</mapper>

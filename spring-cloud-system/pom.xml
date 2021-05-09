@@ -17,6 +17,8 @@
     <modules>
         <module>cloud-eureka</module>
         <module>cloud-zuul</module>
+        <module>cloud-app</module>
+        <module>cloud-server</module>
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -29,14 +31,72 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    
+    <dependencies>
+     <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <!-- 添加这个依赖之后就可以创建一个web应用程序。starter poms部分可以引入所有需要在实际项目中使用的依赖。
+            spring-boot-starter-web依赖包含所有的spring-core, spring-web, spring-webmvc，嵌入的Tomcat server和其他web应用相关的库。 -->
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- jackson-databind依赖 -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+
+        <!-- json依赖 -->
+        <dependency>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+            <version>2.4</version>
+            <classifier>jdk15</classifier>
+        </dependency>
+ 
+ 
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.4</version>
+        </dependency>
+ 
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.7</version>
+        </dependency>
+ 
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-jaxb-annotations</artifactId>
+        </dependency>
+ 
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+ 
+        <!--Spring Cloud Config 客户端依赖-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+ 
+        <!--Spring Boot Actuator，感应服务端变化-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+    </dependencies>
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <uses-versionlessArchive>true</uses-versionlessArchive>
         <jdkVersion>1.8</jdkVersion>
-        <repair.order.version>1.0.0-SNAPSHOT</repair.order.version>
-        <repair.common.version>1.0.0-SNAPSHOT</repair.common.version>
+        <cloud.app.version>1.0.0-SNAPSHOT</cloud.app.version>
+        <cloud.common.version>1.0.0-SNAPSHOT</cloud.common.version>
         <org.springframework.cloud.version>Greenwich.SR2</org.springframework.cloud.version>
     </properties>
 
