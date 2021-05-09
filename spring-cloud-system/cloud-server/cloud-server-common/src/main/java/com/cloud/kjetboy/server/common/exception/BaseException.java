@@ -6,7 +6,8 @@ package com.cloud.kjetboy.server.common.exception;
  * 
  * 通过异常编码对象 {@link ErrorCode} 创建该异常。
  * 
- * @author luojunjie
+ * @author jet
+ *
  */
 public class BaseException extends RuntimeException {
 

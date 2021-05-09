@@ -23,27 +23,7 @@ public class CommonConstants {
 	 * 错误的响应码
 	 */
 	public static final String ERROR_RESPONSE_CODE = "500";
-	
-	/**
-	 * 国密公钥
-	 */
-	public static final String DEFAULT_SM2_PUBLIC_KEY = "040ECAE82EA6BDC5FF6C90E6D8700F4F9BD44224E8F7F7576FA9B17CE823C18DD5C1D4F9CBF4EE23B3D3347C589036EE13E9497607D0F6C7B5CC655D0D250EDCE8";
-	
-	/**
-	 * 国密私钥
-	 */
-	public static final String DEFAULT_SM2_PRIVATE_KEY = "7E94B2BE308639054B1714A758C27B6955CA702A70D906D603EA145AC0A2F079";
-	
-	/**
-	 * SM2对称加密默认密钥
-	 */
-	public static final String DEFAULT_SM2_PREFIX_KEY = "7E94B2BE";
-	/**
-	 * SM4对称加密默认密钥
-	 */
-	public static final String DEFAULT_SM4_PREFIX_KEY = "JeF8U9wH";
-	
-	
+
 	public static final String HARBOR_PROJECT = "/api/v2.0/projects";
 	
 	public static final String EMAIL_DESNES = "****";
@@ -89,6 +69,8 @@ public class CommonConstants {
 	 *   解析日期：    CommonConstants。DEFAULT_DATE_FORMAT.get().parse("2017-12-13 15:17:27")
 	 *   格式化日期：CommonConstants。DEFAULT_DATE_FORMAT.get().format(new Date())
 	 */
+
+
 	public final static ThreadLocal<DateFormat> DEFAULT_DATE_FORMAT = new ThreadLocal<DateFormat>(){
         @Override 
         protected SimpleDateFormat initialValue(){

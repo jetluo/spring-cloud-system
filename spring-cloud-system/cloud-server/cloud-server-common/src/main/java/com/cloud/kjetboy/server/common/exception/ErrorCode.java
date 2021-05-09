@@ -12,11 +12,11 @@ package com.cloud.kjetboy.server.common.exception;
  */
 public class ErrorCode {
 	
-	public static final ErrorCode ILLEGAL_ARGUMENT = new ErrorCode("repair-core-001", "非法参数");
+	public static final ErrorCode ILLEGAL_ARGUMENT = new ErrorCode("cloud-core-001", "非法参数");
 	
-	public static final ErrorCode DATA_ACCESS_ERROR = new ErrorCode("repair-core-002", "数据访问异常");
+	public static final ErrorCode DATA_ACCESS_ERROR = new ErrorCode("cloud-core-002", "数据访问异常");
 	
-	public static final ErrorCode OBJECT_EXISTS = new ErrorCode("repair-core-003", "对象已存在");
+	public static final ErrorCode OBJECT_EXISTS = new ErrorCode("cloud-core-003", "对象已存在");
 
 	/**
 	 * 异常编码，一般采用 “cloud-user-001”这种格式。
