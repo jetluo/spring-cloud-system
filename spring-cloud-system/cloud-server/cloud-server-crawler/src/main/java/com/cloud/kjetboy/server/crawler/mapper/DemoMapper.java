@@ -8,9 +8,17 @@ import org.apache.ibatis.annotations.Mapper;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author jet
+ */
 @Mapper
 public interface DemoMapper extends BaseMapper<Demo>{
-	
+	/**
+	 * 查询
+	 * @param param
+	 * @return
+	 * @throws BusinessException
+	 */
 	public List<Demo> findAll(Map<String, Object> param) throws BusinessException;
 	
 	public void insertDemo(Map<String, Object> param) throws BusinessException;
