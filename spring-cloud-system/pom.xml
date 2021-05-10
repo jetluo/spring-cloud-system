@@ -19,7 +19,6 @@
         <module>cloud-zuul</module>
         <module>cloud-app</module>
         <module>cloud-server</module>
-        <module>cloud-server/cloud-server-audit</module>
     </modules>
     <dependencyManagement>
         <dependencies>
