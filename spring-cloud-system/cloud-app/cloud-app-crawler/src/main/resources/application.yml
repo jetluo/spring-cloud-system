@@ -13,6 +13,6 @@ mybatis-plus:
   global-config:
     db-config:
       id-type=none: none
-  mapper-locations: classpath*:com/cloud/kjetboy/server/crawler/mapper/*.xml
+  mapper-locations: classpath*:mapper/*.xml
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
