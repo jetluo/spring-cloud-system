@@ -4,3 +4,11 @@ server:
 spring:
   application:
     name: kjetboy-zuul
+
+  zipkin:
+    # zipkin - 服务端地址
+    base-url: http://127.0.0.1:19411
+  # zipkin 采样比例，0 - 1.0
+  sleuth:
+    sampler:
+      percentage: 1.0
