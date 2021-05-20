@@ -14,6 +14,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 @MapperScan(basePackages= {"com.cloud.kjetboy.server.audit.mapper"})
 @SpringBootApplication(scanBasePackages={"com.cloud.kjetboy.server.audit"})
 public class AuditApplication {
+
     public static void main(String[] args) {
         SpringApplication.run(AuditApplication.class, args);
     }
