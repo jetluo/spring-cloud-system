@@ -8,19 +8,18 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint;
 import org.springframework.core.annotation.AnnotationUtils;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * @author jet
  * 采集那个方法，用什么数据，返回了什么结果
- * 1. 注解标记数据。
+ * 1. AuditMethodMapping 注解标记数据。
  * 2. ControllerAuditLogCollector 采集标注的切面数据。
- * 3. 存储采集数据。
- * 4. 完成整个审计过程。
+ * 3. AuditFilter 存储采集的数据。
+ * 4. AuditLogCollectorAutoConfiguration 完成bean注入，Filter注入。
+ * 5. 完成整个审计过程。
  */
 @Aspect
-@Component
 public class ControllerAuditLogCollector {
     private static Logger logger = LoggerFactory.getLogger(ControllerAuditLogCollector.class);
     /**
