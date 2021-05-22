@@ -12,8 +12,8 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
  *
  */
 @ServletComponentScan
-@MapperScan(basePackages= {"com.cloud.kjetboy.server.demo.mapper"})
-@SpringBootApplication(scanBasePackages={"com.cloud.kjetboy.server.demo"})
+@MapperScan(basePackages= {"com.cloud.kjetboy.server.demo.mapper","com.cloud.kjetboy.server.audit.mapper"})
+@SpringBootApplication(scanBasePackages={"com.cloud.kjetboy.server.demo","com.cloud.kjetboy.server.audit"})
 public class DemoApplication {
 
     public static void main(String[] args) {
