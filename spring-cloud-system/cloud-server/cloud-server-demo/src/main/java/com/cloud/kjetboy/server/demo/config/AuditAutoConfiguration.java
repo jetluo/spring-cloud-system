@@ -29,7 +29,7 @@ public class AuditAutoConfiguration {
         frBean.setFilter((Filter)auditFilter);
         frBean.addUrlPatterns(new String[] { "/*" });
         frBean.setOrder(10);
-        frBean.setName("acloudAuditFilter");
+        frBean.setName("cloudAuditFilter");
         return frBean;
     }
 
