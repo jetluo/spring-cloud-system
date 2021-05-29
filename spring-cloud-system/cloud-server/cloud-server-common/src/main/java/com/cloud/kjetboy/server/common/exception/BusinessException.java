@@ -37,6 +37,7 @@ public class BusinessException extends BaseException {
 		return this.errorCode;
 	}
 
+	@Override
 	public String getMessage() {
 		return message;
 	}

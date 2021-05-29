@@ -9,11 +9,12 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 /**
  * 微服务应用服务启动类
  * @author jet
- *
+ *,"com.cloud.kjetboy.server.audit.mapper"
+ * ,"com.cloud.kjetboy.server.audit"
  */
 @ServletComponentScan
-@MapperScan(basePackages= {"com.cloud.kjetboy.server.demo.mapper","com.cloud.kjetboy.server.audit.mapper"})
-@SpringBootApplication(scanBasePackages={"com.cloud.kjetboy.server.demo","com.cloud.kjetboy.server.audit"})
+@MapperScan(basePackages= {"com.cloud.kjetboy.server.demo.mapper"})
+@SpringBootApplication(scanBasePackages={"com.cloud.kjetboy.server.demo"})
 public class DemoApplication {
 
     public static void main(String[] args) {
