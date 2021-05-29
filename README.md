@@ -11,6 +11,11 @@
 ##  @SpringBootApplication(scanBasePackages={"com.cloud.kjetboy.server.audit"})
 ## 3.在需要添加审计的controller类上添加注解@Audit
 ## 暂时不实现展现功能
+## 上面是单体模式，如果是审计的client->server模式。
+## 1. client就是这个 cloud-app-audit单体项目，在写入数据库的时候可以用http模式调用服务端
+## 2。 服务端接收服务，完成数据写入 。 然后在查询出数据，完成数据分类，实现审计服务。
+## 核心类图
+![img.png](img.png)
 ####   cloud-app-crawler //启动类
 ### cloud-server
 ####   cloud-server-audit
