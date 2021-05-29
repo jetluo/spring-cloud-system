@@ -48,6 +48,7 @@ public class AuditMethodMapping extends WebApplicationObjectSupport implements I
                     Object handler = beanType;
                     Class<?> handlerType = (handler instanceof String) ? getApplicationContext().getType((String)handler) : handler.getClass();
                     final Class<?> userType = ClassUtils.getUserClass(handlerType);
+
                     Map<Method, AuditInfo> methods = MethodIntrospector.selectMethods(userType, new MethodIntrospector.MetadataLookup<AuditInfo>() {
                         @Override
                         public AuditInfo inspect(Method method) {
@@ -59,8 +60,9 @@ public class AuditMethodMapping extends WebApplicationObjectSupport implements I
                             }
                         }
                     });
-                    if (this.logger.isDebugEnabled())
+                    if (this.logger.isDebugEnabled()) {
                         this.logger.debug(methods.size() + " request handler methods found on " + userType + ": " + methods);
+                    }
                     for (Map.Entry<Method, AuditInfo> entry : methods.entrySet()) {
                         Method invocableMethod = AopUtils.selectInvocableMethod(entry.getKey(), userType);
                         AuditInfo mapping = entry.getValue();
