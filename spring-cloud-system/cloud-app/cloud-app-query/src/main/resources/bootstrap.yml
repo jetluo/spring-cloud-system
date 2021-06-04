@@ -1,12 +1,17 @@
 spring:
   application:
-    name: cloud-kjetboy-eureka
+    name: cloud-kjetboy-query
   cloud:
     config:
       uri: ${CONFIG_SERVER_URL:http://localhost:8888}
       enabled: false
 
 eureka:
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://localhost:18761/eureka/
   instance:
     prefer-ip-address: true
     lease-expiration-duration-in-seconds: 20

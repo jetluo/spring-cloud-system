@@ -63,6 +63,7 @@
         <module>cloud-server-crawler</module>
         <module>cloud-server-audit</module>
         <module>cloud-server-demo</module>
+        <module>cloud-server-query</module>
     </modules>
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

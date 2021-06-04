@@ -45,6 +45,7 @@
         <module>cloud-app-crawler</module>
         <module>cloud-app-audit</module>
         <module>cloud-app-demo</module>
+        <module>cloud-app-query</module>
     </modules>
 
     <properties>

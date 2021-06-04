@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * 微服务应用服务启动类
  * @author jet
- *
  */
 @SpringBootApplication
 @EnableZuulProxy
