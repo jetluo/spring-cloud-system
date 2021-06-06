@@ -1,7 +1,54 @@
 # spring-cloud-system 架构
 **1. 目录结果**
 ### cloud-eureka
-### cloud-zuul
+### cloud-zuul 添加一次性请求令牌
+
+前端生成token：
+
+const _generateOnceToken = (protocol, salt) => {
+
+​    let token = {
+
+​      token: uuid.v4(),  //uuid
+
+​      timestamp: new Date().getTime(), //当前时间戳
+
+​      sign: null
+
+​    }
+
+​    let value = token.timestamp + ',' + token.token //当前时间戳+uuid+盐
+
+​    if (salt) {
+
+​        value = value + ',' + salt
+
+​    }
+
+​    token.sign = smcrypto.Sm3Utils.encrypt(value)  //sm3加密
+
+​    return token
+
+}
+
+前端绑定token到header：
+
+​        return {
+
+​            'X-Request-Token': onceToken.token,
+
+​            'X-Request-Time': onceToken.timestamp,
+
+​            'X-Request-Sign': onceToken.sign
+
+​        }
+
+后端完成验证。
+
+![image-20210606122338118](/Users/jet/git/java/assets/image-20210606122338118.png)
+
+ ![image-20210606122445133](/Users/jet/git/java/assets/image-20210606122445133.png)
+
 ### cloud-app
 ####   cloud-app-audit  //启动类
 ## 审计功能完成业务数据访问的拦截并存入到数据库。
@@ -20,5 +67,4 @@
 ### cloud-server
 ####   cloud-server-audit
 ####   cloud-server-crawler
-  
 
