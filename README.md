@@ -45,9 +45,9 @@ const _generateOnceToken = (protocol, salt) => {
 
 后端完成验证。
 
-![image-20210606122338118](/Users/jet/git/java/assets/image-20210606122338118.png)
+![image-20210606122338118](assets/image-20210606122338118.png)
 
- ![image-20210606122445133](/Users/jet/git/java/assets/image-20210606122445133.png)
+ ![image-20210606122445133](assets/image-20210606122445133.png)
 
 ### cloud-app
 ####   cloud-app-audit  //启动类

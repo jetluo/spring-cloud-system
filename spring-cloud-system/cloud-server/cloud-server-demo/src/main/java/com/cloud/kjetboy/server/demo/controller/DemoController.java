@@ -4,7 +4,6 @@ import com.cloud.kjetboy.server.common.bean.RestResult;
 import com.cloud.kjetboy.server.common.constants.CommonConstants;
 import com.cloud.kjetboy.server.common.controller.BaseController;
 import com.cloud.kjetboy.server.common.exception.BusinessException;
-import com.cloud.kjetboy.server.demo.annotation.Audit;
 import com.cloud.kjetboy.server.demo.entity.Demo;
 import com.cloud.kjetboy.server.demo.service.DemoService;
 import com.github.pagehelper.PageInfo;
@@ -30,7 +29,7 @@ public class DemoController extends BaseController{
 	public RestResult aa(@RequestParam Map<String, Object> param) {
 		return   RestResult.restSuccess(CommonConstants.SUCCESS_RESPONSE_CODE, "Spider启动成功");
 	}
-	@Audit
+	//@Audit
 	@RequestMapping("/findAll")
 	public RestResult findAll(@RequestParam Map<String, Object> param) {
 		System.out.println("sss");

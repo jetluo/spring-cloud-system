@@ -1,6 +1,12 @@
 server:
   port: 18000
 
+acloud:
+  request-token:
+    enabled: true
+    files:
+      - file:///home/acloud1.5/acloud-zuul/whitelist.txt
+
 spring:
   application:
     name: kjetboy-zuul

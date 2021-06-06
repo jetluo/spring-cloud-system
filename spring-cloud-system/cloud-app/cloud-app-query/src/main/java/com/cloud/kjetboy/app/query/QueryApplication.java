@@ -15,10 +15,10 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 @ServletComponentScan
 @MapperScan(basePackages= {"com.cloud.kjetboy.server.query.mapper"})
 @SpringBootApplication(scanBasePackages={"com.cloud.kjetboy.server.query"})
-public class DemoApplication {
+public class QueryApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
+        SpringApplication.run(QueryApplication.class, args);
     }
 
 }
