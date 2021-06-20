@@ -1,6 +1,7 @@
 # spring-cloud-system 架构
 **1. 目录结果**
 ### cloud-eureka
+### cloud-app-sso 添加Oauth2.0
 ### cloud-zuul 添加一次性请求令牌
 
 前端生成token：
@@ -67,4 +68,5 @@ const _generateOnceToken = (protocol, salt) => {
 ### cloud-server
 ####   cloud-server-audit
 ####   cloud-server-crawler
+####   cloud-server-sso //授权服务
 
