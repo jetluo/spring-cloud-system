@@ -46,6 +46,7 @@
         <module>cloud-app-audit</module>
         <module>cloud-app-demo</module>
         <module>cloud-app-query</module>
+        <module>cloud-app-sso</module>
     </modules>
 
     <properties>

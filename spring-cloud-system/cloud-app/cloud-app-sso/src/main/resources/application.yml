@@ -1,0 +1,41 @@
+server:
+  port: 18888
+
+cloud:
+  audit:
+    enabled: true
+    filter:
+      enabled: true
+
+#password md5 salt encrypt
+password:
+  algorithmName: md5
+  hashIterations: 2
+
+spring:
+  application:
+    name: cloud-kjetboy-oauth2
+  datasource:
+    url: jdbc:mysql://localhost:13306/permission?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=GMT%2B8
+    username: root
+    password: Star*2020
+  mvc:
+    view:
+      # Configure prefix
+      prefix: /WEB-INF/jsp/
+      # Configure suffix
+      suffix: .jsp
+#  zipkin:
+#    # zipkin - 服务端地址
+#    base-url: http://127.0.0.1:19411
+#  # zipkin 采样比例，0 - 1.0
+#  sleuth:
+#    sampler:
+#      percentage: 1.0
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type=none: none
+  mapper-locations: classpath*:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

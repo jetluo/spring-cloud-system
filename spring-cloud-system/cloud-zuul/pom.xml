@@ -46,11 +46,7 @@
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-starter-zipkin</artifactId>
     </dependency>
-    <dependency>
-        <groupId>com.aostarit.acloud</groupId>
-        <artifactId>acloud-once-token</artifactId>
-        <version>1.5.0-SNAPSHOT</version>
-    </dependency>
+
  </dependencies>
 
     <build>

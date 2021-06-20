@@ -10,6 +10,7 @@ import com.github.pagehelper.PageInfo;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,8 +31,10 @@ public class DemoController extends BaseController{
 		return   RestResult.restSuccess(CommonConstants.SUCCESS_RESPONSE_CODE, "Spider启动成功");
 	}
 	//@Audit
-	@RequestMapping("/findAll")
-	public RestResult findAll(@RequestParam Map<String, Object> param) {
+	@GetMapping("/findAll")
+	//@ApiOperation("查询所有数据")
+	//@ApiImplicitParams({@ApiImplicitParam(name="param",value = "查询",dataType = "Map",required = false)})
+	public RestResult findAll(@RequestParam  Map<String, Object> param ) {
 		System.out.println("sss");
 		PageInfo<Demo> pageInfo = new PageInfo<Demo>();
 		try {
