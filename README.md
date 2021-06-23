@@ -69,4 +69,25 @@ const _generateOnceToken = (protocol, salt) => {
 ####   cloud-server-audit
 ####   cloud-server-crawler
 ####   cloud-server-sso //授权服务
-
+==================
+## 基于oltu
+## 
+## 前端完成，后端提供服务即可。
+## 第一步：获取code，并跳转到访问页面
+## admin/123456
+## http://localhost:18888/authorize?response_type=code&client_id=c1ebe466-1cdc-4bd3-ab69-77c3561b9dee&redirect_uri=http://localhost:18888/v1/openapi/userInfo
+## 
+## 
+## 第二步：根据code，获取到access_token
+## http://localhost:18888/accessToken?grant_type=authorization_code&code=ee744975d49d104caa835c37a5d1196a&redirect_uri=http://localhost:18888/v1/openapi/userInfo&client_id=c1ebe466-1cdc-4bd3-ab69-77c3561b9dee&client_secret=d8346ea2-6017-43ed-ad68-19c0f971738b
+##
+##
+## 第三步：根据access_token，获取数据。
+## http://localhost:18888/v1/openapi/userInfo?access_token=98422b1e02cdb35c25bf178cde9856c8
+## 前端完成第一步请求，检查没有token的时候调用/authorize api，进行登录验证和获取access_token，返回后第三步，前端获取access_token并存储起来，
+## 并通过axios拦截器完成统一配置，每次请求发出去之前把token加到请求头。
+## 后端需要加过滤器，添加对请求access_token的检查即可。
+## 第一步：检查access_token
+## http://localhost:18888/checkAccessToken?accessToken=98422b1e02cdb35c25bf178cde9856c8
+## 前后端分离应用，由前端完成用户登录的校验，获取到token，通过网关去访问系统资源，网关进行判断是否是有效的token
+## 有效则调用对应的服务，无效则进行拦截并提示token无效。
