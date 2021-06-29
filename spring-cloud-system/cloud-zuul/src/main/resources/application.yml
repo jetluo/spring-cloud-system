@@ -1,12 +1,66 @@
 server:
   port: 18000
 
-acloud:
-  request-token:
-    enabled: true
-    files:
-      - file:///home/acloud1.5/acloud-zuul/whitelist.txt
-
+cloud:
+  safe:
+    enabled: false
+    filter:
+      order: 11
+    xss:
+      enabled: true
+    upload:
+      enabled: true
+      whitelist: YML|TXT|PROPERTIES|JPG|PNG|ZIP
+      maxsize: '409600'
+    sqlinject:
+      enabled: true
+    header:
+      enabled: true
+      host:
+        allowed: localhost:18000,127.0.0.1:18000,localhost:80,192.168.3.149:18000,192.168.3.149:80
+      method:
+        allowed: GET,POST
+    tamper-proofing:
+      enabled: false
+      ignored:
+        - /acloud-oauth/oauth/authorize
+        - /acloud-oauth/users/info
+        - /acloud-oauth/oauth/token
+        - /acloud-oauth/dynamic-pscode/create
+        - /acloud-oauth/dynamic-pscode/create1
+        - /acloud-oauth/themes/**
+        - /acloud-ui/**
+        - /aoscc-ui/**
+        - /acloud-user/users/modifyDefaultAuthkey/index
+        - /acloud-user/users/pscode/forceModifyDefault
+        - /acloud-admin/**
+        - /users/info
+        - /health
+        - /refresh
+        - /env
+        - /routes
+        - /info
+        - /acloud-bpm-ui/**
+        - /acloud-file-center/file/oper/download
+        - /acloud-activiti-rest/activiti/api/models/upload
+    cross:
+      enabled: false
+      allowed:
+        referer:
+          - http://localhost:8080/**
+          - http://192.168.3.149:8080/**
+          - http://192.168.3.149:80/**
+          - http://192.168.3.149:18000/**
+          - http://192.168.3.149:18008/**
+        whiteragex:
+          - /aoscc-system-demo/
+          - /acloud-ui/
+          - /acloud-oauth/oauth/authorize
+          - /acloud-admin/
+          - /aoscc-ui/
+          - /**/*.map
+          - /acloud-user/users/modifyDefaultAuthkey/index
+          - /routes
 spring:
   application:
     name: kjetboy-zuul

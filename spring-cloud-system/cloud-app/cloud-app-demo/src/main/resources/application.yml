@@ -16,6 +16,12 @@ spring:
     url: jdbc:mysql://localhost:13306/repair?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=GMT%2B8
     username: root
     password: Star*2020
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: admin
+    password: admin
+    virtual-host: repair
 #  zipkin:
 #    # zipkin - 服务端地址
 #    base-url: http://127.0.0.1:19411
@@ -23,6 +29,7 @@ spring:
 #  sleuth:
 #    sampler:
 #      percentage: 1.0
+
 mybatis-plus:
   global-config:
     db-config:
