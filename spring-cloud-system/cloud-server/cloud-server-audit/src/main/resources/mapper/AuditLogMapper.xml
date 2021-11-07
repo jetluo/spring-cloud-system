@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cloud.kjetboy.server.audit.mapper.AuditLogMapper">
+    <resultMap id="BaseResultMap"
+               type="com.cloud.kjetboy.server.audit.entity.AuditLog">
+        <id column="ID" jdbcType="VARCHAR" property="id" />
+        <result column="TYPE" jdbcType="VARCHAR" property="type" />
+        <result column="CATEGORY_ID" jdbcType="VARCHAR" property="categoryId" />
+        <result column="CATEGORY_NAME" jdbcType="VARCHAR" property="categoryName" />
+        <result column="ANALYSIS_ENABLE" jdbcType="VARCHAR" property="analysisEnable" />
+        <result column="APP_NAME" jdbcType="VARCHAR" property="appName" />
+        <result column="APP_CODE" jdbcType="VARCHAR" property="appCode" />
+        <result column="APP_NODE_IP" jdbcType="VARCHAR" property="appNodeIp" />
+        <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+        <result column="USER_IP" jdbcType="VARCHAR" property="userIp" />
+        <result column="THEAD_NAME" jdbcType="VARCHAR" property="theadName" />
+        <result column="CLASS_NAME" jdbcType="VARCHAR" property="className" />
+        <result column="METHOD_NAME" jdbcType="VARCHAR" property="methodName" />
+        <result column="REQUEST_URL" jdbcType="VARCHAR" property="requestUrl" />
+        <result column="START_TIME" jdbcType="TIMESTAMP" property="startTime" />
+        <result column="END_TIME" jdbcType="TIMESTAMP" property="endTime" />
+        <result column="COST_TIME" jdbcType="BIGINT" property="costTime" />
+        <result column="INPUT" jdbcType="LONGVARCHAR" property="input" />
+        <result column="OUTPUT" jdbcType="LONGVARCHAR" property="output" />
+        <result column="MESSAGE_TEXT" jdbcType="LONGVARCHAR" property="messageText" />
+        <result column="EXCEPTION_TRACE" jdbcType="LONGVARCHAR" property="exceptiontrace" />
+        <result column="EVENT_LEVEL" jdbcType="VARCHAR" property="eventLevel" />
+        <result column="SUCCESS_CODE" jdbcType="VARCHAR" property="successCode" />
+        <result column="OPERATION_NAME" jdbcType="VARCHAR" property="operationName" />
+        <result column="EVENT_TYPE" jdbcType="VARCHAR" property="eventType" />
+
+    </resultMap>
+
+
+
+    <insert id="insert" parameterType="com.cloud.kjetboy.server.audit.entity.AuditLog">
+        INSERT INTO AUDIT_LOGS
+        (ID,ANALYSIS_ENABLE, TYPE, CATEGORY_ID, CATEGORY_NAME, APP_CODE,APP_NAME,
+         APP_NODE_IP, USER_NAME, USER_IP, THEAD_NAME, CLASS_NAME, METHOD_NAME,
+         REQUEST_URL, START_TIME, END_TIME, COST_TIME, INPUT, OUTPUT, MESSAGE_TEXT,
+         EXCEPTION_TRACE,EVENT_LEVEL,SUCCESS_CODE,OPERATION_NAME, EVENT_TYPE )
+        VALUES
+        (REPLACE(UUID(), '-', ''),#{analysisEnable,jdbcType=VARCHAR},
+         #{type,jdbcType=VARCHAR}, #{categoryId,jdbcType=VARCHAR},
+         #{categoryName}, #{appCode,jdbcType=VARCHAR},
+         #{appName,jdbcType=VARCHAR}, #{appNodeIp,jdbcType=VARCHAR},
+         #{userName,jdbcType=VARCHAR}, #{userIp,jdbcType=VARCHAR},
+         #{theadName,jdbcType=VARCHAR}, #{className,jdbcType=VARCHAR},
+         #{methodName,jdbcType=VARCHAR}, #{requestUrl,jdbcType=VARCHAR},
+         #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP},
+         #{costTime,jdbcType=BIGINT}, #{input,jdbcType=LONGVARCHAR},
+         #{output,jdbcType=LONGVARCHAR}, #{messageText,jdbcType=LONGVARCHAR},
+         #{exceptiontrace,jdbcType=LONGVARCHAR}, #{eventLevel,jdbcType=VARCHAR},
+         #{successCode,jdbcType=VARCHAR}, #{operationName,jdbcType=VARCHAR},
+         #{eventType,jdbcType=VARCHAR} )
+    </insert>
+</mapper>

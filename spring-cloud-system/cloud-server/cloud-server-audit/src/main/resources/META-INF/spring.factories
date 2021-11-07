@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.cloud.kjetboy.server.audit.config.AuditLogCollectorAutoConfiguration,\
+com.cloud.kjetboy.server.audit.service.impl.AuditLogServiceImpl
