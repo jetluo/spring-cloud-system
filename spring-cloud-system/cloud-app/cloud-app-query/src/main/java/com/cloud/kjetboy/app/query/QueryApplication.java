@@ -4,6 +4,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 
 
 /**
@@ -15,6 +16,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 @ServletComponentScan
 @MapperScan(basePackages= {"com.cloud.kjetboy.server.query.mapper"})
 @SpringBootApplication(scanBasePackages={"com.cloud.kjetboy.server.query"})
+@EnableElasticsearchRepositories(basePackages = {"com.cloud.kjetboy.server.query.repositories"})
 public class QueryApplication {
 
     public static void main(String[] args) {

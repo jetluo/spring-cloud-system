@@ -40,7 +40,6 @@ public class DemoServiceImpl extends ServiceImpl<DemoMapper,Demo> implements Dem
 
 	@Override
 	public List<Demo> findAll(Map<String, Object> param) throws BusinessException {
-	
 		return demoMapper.findAll(param);
 	}
 
