@@ -1,0 +1,17 @@
+server:
+  port: 18883
+
+cloud:
+  audit:
+    enabled: true
+    filter:
+      enabled: true
+
+
+
+spring:
+  application:
+    name: cloud-kjetboy-es
+
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

@@ -65,6 +65,7 @@
         <module>cloud-server-demo</module>
         <module>cloud-server-query</module>
         <module>cloud-server-sso</module>
+        <module>cloud-server-es</module>
     </modules>
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
